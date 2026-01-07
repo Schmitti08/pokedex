@@ -1,3 +1,8 @@
+function render(){
+
+}
+
+
 function filterPokemon() {
     const searchValue = document.getElementById("search").value.toLowerCase();
 
@@ -18,4 +23,16 @@ document.getElementById("load-more").addEventListener("click", () => {
     offset += limit; // Nächste 10
     loadPokemon();
 });
+
+function showLoader() {
+  document.getElementById("loader").classList.remove("hidden");
+}
+
+function hideLoader() {
+  document.getElementById("loader").classList.add("hidden");
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 

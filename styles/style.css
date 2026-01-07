@@ -62,8 +62,6 @@ main {
   background-color: yellow;
 }
 
-
-
 .load-btn:hover {
   cursor: pointer;
   background-color: rgb(255, 255, 167);
@@ -97,7 +95,16 @@ main {
   background-color: bisque;
 }
 
-
 .CapLet::first-letter {
   text-transform: capitalize;
+}
+
+.loader {
+  color: white;
+  font-size: 24px;
+  margin: 20px;
+}
+
+.hidden {
+  display: none;
 }

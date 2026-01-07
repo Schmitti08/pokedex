@@ -5,8 +5,10 @@ let limit = 10;
 
 async function loadPokemon() {
     const BASE_URL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
+    
+    showLoader();
+    
     try {
-
         const listResponse = await fetch(BASE_URL);
         const listData = await listResponse.json();
 
@@ -25,6 +27,8 @@ async function loadPokemon() {
 
     } catch (error) {
         console.error("Fehler beim Laden der Pokémon:", error);
+    } finally {
+        hideLoader();
     }
 
 }
