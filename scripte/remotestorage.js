@@ -5,9 +5,9 @@ let limit = 10;
 
 async function loadPokemon() {
     const BASE_URL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
-    
+
     showLoader();
-    
+
     try {
         const listResponse = await fetch(BASE_URL);
         const listData = await listResponse.json();
@@ -19,7 +19,13 @@ async function loadPokemon() {
             pokemonArray.push({
                 name: data.name,
                 image: data.sprites.front_default,
-                types: data.types.map(t => t.type.name)
+                types: data.types.map(t => t.type.name),
+                stats: {
+                    hp: data.stats[0].base_stat,
+                    attack: data.stats[1].base_stat,
+                    defense: data.stats[2].base_stat,
+                    speed: data.stats[5].base_stat
+                }
             });
         }
 

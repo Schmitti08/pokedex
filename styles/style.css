@@ -58,6 +58,50 @@ main {
   height: 96px;
 }
 
+.detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-card {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  text-align: center;
+}
+
+.detail-card img {
+  width: 150px;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav.left {
+  left: -50px;
+  color: white;
+}
+
+.nav.right {
+  right: -50px;
+  color: white;
+}
+
 .load-btn {
   margin-top: 16px;
   font-size: 24px;
