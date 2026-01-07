@@ -18,14 +18,19 @@
     </header>
 
     <main>
-        <div id="loader" class="loader hidden">Lädt Pokémon...</div>
         <div class="pokemon-container" id="pokemon-container"></div>
-        <button class="load-btn" id="load-more">Weitere laden</button>
+        <button class="load-btn" id="load-more" onclick="loadMore()">Weitere laden</button>
     </main>
-
-    <!-- JS -->
-    <script src="./scripte/remotestorage.js"></script>
-    <script src="./scripte/template.js"></script>
-    <script src="./scripte/script.js"></script>
+    
+    <div id="loader-overlay" class="loader-overlay hidden">
+        <div class="loader-box">
+            Lädt Pokémon...
+        </div>
+    </div>
+</body>
+<!-- JS -->
+<script src="./scripte/remotestorage.js"></script>
+<script src="./scripte/template.js"></script>
+<script src="./scripte/script.js"></script>
 
 </html>

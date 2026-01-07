@@ -48,6 +48,11 @@ main {
   background-color: #ffffff;
 }
 
+.pokemon-card:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
 .pokemon-card img {
   width: 96px;
   height: 96px;
@@ -99,10 +104,25 @@ main {
   text-transform: capitalize;
 }
 
-.loader {
+.loader-overlay {
+  position: fixed;
+  inset: 0; /* top, right, bottom, left = 0 */
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-box {
   color: white;
-  font-size: 24px;
-  margin: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 30px 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .hidden {

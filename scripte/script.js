@@ -19,17 +19,23 @@ function filterPokemon() {
     container.innerHTML = html;
 }
 
-document.getElementById("load-more").addEventListener("click", () => {
-    offset += limit; // Nächste 10
+function loadMore() {
+    offset += limit; 
     loadPokemon();
-});
+}
+
+
 
 function showLoader() {
-  document.getElementById("loader").classList.remove("hidden");
+  document
+    .getElementById("loader-overlay")
+    .classList.remove("hidden");
 }
 
 function hideLoader() {
-  document.getElementById("loader").classList.add("hidden");
+  document
+    .getElementById("loader-overlay")
+    .classList.add("hidden");
 }
 
 function delay(ms) {
