@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <title>Pokedex</title>
+</head>
+
+<body onload="loadPokemon()">
+    <header>
+        <h1>Pokémon</h1>
+        <input type="text" id="search" placeholder="Pokémon suchen..." oninput="filterPokemon()">
+    </header>
+
+    <main>
+        <div class="pokemon-container" id="pokemon-container"></div>
+        <button class="load-btn" id="load-more">Weitere laden</button>
+    </main>
+
+    <!-- JS -->
+    <script src="./scripte/remotestorage.js"></script>
+    <script src="./scripte/template.js"></script>
+    <script src="./scripte/script.js"></script>
+
+</html>
