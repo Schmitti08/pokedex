@@ -1,0 +1,25 @@
+@media (min-width: 150px) {
+  .detail-card { max-width: 150px; padding: 32px; }
+  .detail-card img { max-width: 90px; }
+  .nav.left { left: -50px; }
+  .nav.right { right: -50px; }
+}
+
+@media (min-width: 430px) {
+  .detail-card { max-width: 250px; padding: 32px; }
+  .detail-card img { max-width: 150px; }
+  .nav.left { left: -50px; }
+  .nav.right { right: -50px; }
+}
+
+@media (min-width: 768px) {
+  .detail-card { max-width: 500px; padding: 32px; }
+  .detail-card img { max-width: 250px; }
+  .nav.left { left: -50px; }
+  .nav.right { right: -50px; }
+}
+
+@media (min-width: 1024px) {
+  .detail-card { max-width: 600px; padding: 40px; }
+  .detail-card img { max-width: 300px; }
+}
