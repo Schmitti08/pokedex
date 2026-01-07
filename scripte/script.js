@@ -1,7 +1,4 @@
-function render() {
-
-}
-
+let currentIndex = 0;
 
 function filterPokemon() {
     const searchValue = document.getElementById("search").value.toLowerCase().trim();
@@ -29,22 +26,13 @@ function loadMore() {
     loadPokemon();
 }
 
-
-
 function showLoader() {
-    document
-        .getElementById("loader-overlay")
-        .classList.remove("hidden");
+    document.getElementById("loader-overlay").classList.remove("hidden");
 }
 
 function hideLoader() {
-    document
-        .getElementById("loader-overlay")
-        .classList.add("hidden");
+    document.getElementById("loader-overlay").classList.add("hidden");
 }
-
-
-let currentIndex = 0;
 
 function openDetail(index) {
     currentIndex = index;
@@ -69,8 +57,7 @@ function nextPokemon() {
 }
 
 function prevPokemon() {
-    currentIndex =
-        (currentIndex - 1 + pokemonArray.length) % pokemonArray.length;
+    currentIndex = (currentIndex - 1 + pokemonArray.length) % pokemonArray.length;
     renderDetail();
 }
 

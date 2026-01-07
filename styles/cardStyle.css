@@ -1,0 +1,92 @@
+.pokemon-card {
+  border: 1px solid white;
+  box-shadow: 0px 10px 13px -7px #ffffff, 0px 0px 18px 6px rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.pokemon-card:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.pokemon-card img {
+  width: 96px;
+  height: 96px;
+}
+
+.detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-card {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  text-align: center;
+}
+
+.detail-card img {
+  width: 150px;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav.left {
+  left: -50px;
+  color: white;
+}
+
+.nav.right {
+  right: -50px;
+  color: white;
+}
+
+/* Background-Colors  */
+
+.grass {
+  background-color: rgb(73, 255, 73);
+}
+
+.fire {
+  background-color: rgb(241, 139, 139);
+}
+
+.water {
+  background-color: aqua;
+}
+
+.poison {
+  background-color: green;
+}
+
+.electric {
+  background-color: yellow;
+}
+
+.bug {
+  background-color: rgb(255, 255, 114);
+}
+
+.normal {
+  background-color: bisque;
+}

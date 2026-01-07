@@ -12,8 +12,8 @@ function bigPokeCard() {
   return `
     <div id="detail-overlay" class="detail-overlay hidden" onclick="closeDetail(event)">
       <div id="detail-card" class="detail-card" onclick="event.stopPropagation()">
-          <button class="nav left" onclick="prevPokemon()">❮</button>
-          <button class="nav right" onclick="nextPokemon()">❯</button>
+          <button class="nav left" onclick="prevPokemon()"><</button>
+          <button class="nav right" onclick="nextPokemon()">></button>
           <div id="detail-content"></div>
       </div>
     </div>
