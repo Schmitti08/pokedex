@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png">
 
     <!-- Style -->
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/responsive.css">
     <link rel="stylesheet" href="./styles/cardStyle.css">
 
+
     <title>Pokedex</title>
 </head>
 
-<body onload="loadPokemon()">
+<body onload="loadPokemon(), initCard()">
     <header>
         <h1>Pokémon</h1>
         <input type="text" id="search" placeholder="Pokémon suchen..." oninput="filterPokemon()">
@@ -24,11 +26,22 @@
         <button class="load-btn" id="load-more" onclick="loadMore()">Weitere laden</button>
     </main>
 
+    <!-- Ladebildschirm -->
     <div id="loader-overlay" class="loader-overlay hidden">
         <div class="loader-box">
             Lädt Pokémon...
         </div>
     </div>
+
+    <!-- Große Pokemonkarte -->
+    <div id="detail-overlay" class="hidden detail-overlay">
+        <div id="detail-card" class="detail-card">
+            <button onclick="prevPokemon()" class="nav left"><</button>
+                    <button onclick="nextPokemon()" class="nav right">></button>
+                    <div id="detail-content"></div>
+        </div>
+    </div>
+
 </body>
 <!-- JS -->
 <script src="./scripte/remotestorage.js"></script>

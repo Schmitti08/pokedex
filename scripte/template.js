@@ -1,6 +1,6 @@
 function pokeCard(pokemon, index) {
   return `
-    <div class="pokemon-card ${pokemon.types[0]}" onclick="openDetail(${index})">
+    <div class="pokemon-card ${pokemon.types[0]}" onclick="openBigCard(${index})">
       <h3 class="CapLet">${pokemon.name}</h3>
       <img src="${pokemon.image}" alt="${pokemon.name}">
       <p>Typ: ${pokemon.types.join(", ")}</p>
@@ -8,21 +8,9 @@ function pokeCard(pokemon, index) {
     `;
 }
 
-function bigPokeCard() {
-  return `
-    <div id="detail-overlay" class="detail-overlay hidden" onclick="closeDetail(event)">
-      <div id="detail-card" class="detail-card" onclick="event.stopPropagation()">
-          <button class="nav left" onclick="prevPokemon()"><</button>
-          <button class="nav right" onclick="nextPokemon()">></button>
-          <div id="detail-content"></div>
-      </div>
-    </div>
-  `;
-}
-
 function renderDetail() {
-  const p = pokemonArray[currentIndex];
-  const overlay = document.getElementById("detail-card");
+  let p = pokemonArray[currentIndex];
+  let overlay = document.getElementById("detail-card");
   overlay.className = `detail-card ${p.types[0]}`;
   document.getElementById("detail-content").innerHTML = `
     <h2 class="CapLet">${p.name}</h2>

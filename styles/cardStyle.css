@@ -27,39 +27,38 @@
   align-items: center;
 }
 
+/* Desktop-First: große Karte */
 .detail-card {
   background: white;
-  width: 90%;
-  max-width: 400px;
+  width: 60%;           /* nimmt 60% des Viewports */
+  max-width: 700px;     /* Limit */
   border-radius: 16px;
-  padding: 24px;
+  padding: 40px;
   position: relative;
   text-align: center;
 }
 
 .detail-card img {
-  width: 150px;
+  width: 50%;           /* 50% der Karte */
+  max-width: 300px;
+  height: auto;
 }
 
 .nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 32px;
+  font-size: 36px;
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.nav.left {
-  left: -50px;
   color: white;
 }
 
-.nav.right {
-  right: -50px;
-  color: white;
-}
+/* Pfeile relativ zur Karte */
+.nav.left { left: -5%; }
+.nav.right { right: -5%; }
+
 
 /* Background-Colors  */
 

@@ -1,14 +1,12 @@
 let currentIndex = 0;
 
 function filterPokemon() {
-    const searchValue = document.getElementById("search").value.toLowerCase().trim();
-
-    const container = document.getElementById("pokemon-container");
+    let searchValue = document.getElementById("search").value.toLowerCase().trim();
+    let container = document.getElementById("pokemon-container");
     let html = "";
-
     if (searchValue.length >= 3) {
         for (let i = 0; i < pokemonArray.length; i++) {
-            const pokemonName = pokemonArray[i].name.toLowerCase();
+            let pokemonName = pokemonArray[i].name.toLowerCase();
             if (pokemonName.includes(searchValue)) {
                 html += pokeCard(pokemonArray[i], i);
             }
@@ -34,21 +32,23 @@ function hideLoader() {
     document.getElementById("loader-overlay").classList.add("hidden");
 }
 
-function openDetail(index) {
-    currentIndex = index;
-
-    if (!document.getElementById("detail-overlay")) {
-        document.body.insertAdjacentHTML("beforeend", bigPokeCard());
-    }
-    document.body.style.overflow = "hidden";
-    const overlay = document.getElementById("detail-overlay");
-    overlay.classList.remove("hidden");
-    renderDetail();
+function openBigCard(index) {
+  currentIndex = index;
+  renderDetail();
+  document.body.style.overflow = "hidden";
+  document.getElementById("detail-overlay").classList.remove("hidden");
 }
 
-function closeDetail(event) {
-    document.body.style.overflow = "";
-    document.getElementById("detail-overlay").classList.add("hidden");
+function closeBigCard() {
+  document.body.style.overflow = "";
+  document.getElementById("detail-overlay").classList.add("hidden");
+}
+
+function initCard() {
+    document.getElementById("detail-overlay").addEventListener("click", closeBigCard);
+    document.getElementById("detail-card").addEventListener("click", (e) => {
+        e.stopPropagation();
+    });
 }
 
 function nextPokemon() {
@@ -60,4 +60,5 @@ function prevPokemon() {
     currentIndex = (currentIndex - 1 + pokemonArray.length) % pokemonArray.length;
     renderDetail();
 }
+
 
