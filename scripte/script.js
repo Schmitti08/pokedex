@@ -16,6 +16,11 @@ function filterPokemon() {
             html += pokeCard(pokemonArray[i], i);
         }
     }
+    if (!html) {
+        html = `<p style="grid-column: 1 / -1; text-align: center; font-size: 1.5rem; color: white;">
+                    Pokémon nicht gefunden
+                </p>`;
+    }
     container.innerHTML = html;
 }
 
@@ -33,15 +38,15 @@ function hideLoader() {
 }
 
 function openBigCard(index) {
-  currentIndex = index;
-  renderDetail();
-  document.body.style.overflow = "hidden";
-  document.getElementById("detail-overlay").classList.remove("hidden");
+    currentIndex = index;
+    renderDetail();
+    document.body.style.overflow = "hidden";
+    document.getElementById("detail-overlay").classList.remove("hidden");
 }
 
 function closeBigCard() {
-  document.body.style.overflow = "";
-  document.getElementById("detail-overlay").classList.add("hidden");
+    document.body.style.overflow = "";
+    document.getElementById("detail-overlay").classList.add("hidden");
 }
 
 function initCard() {
