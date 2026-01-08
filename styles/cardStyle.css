@@ -56,8 +56,8 @@
 }
 
 /* Pfeile relativ zur Karte */
-.nav.left { left: -5%; }
-.nav.right { right: -5%; }
+.nav.left { left: -10%; }
+.nav.right { right: -10%; }
 
 
 /* Background-Colors  */
