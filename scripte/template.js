@@ -10,16 +10,23 @@ function pokeCard(pokemon, index) {
 
 function renderDetail() {
   let p = pokemonArray[currentIndex];
-  let overlay = document.getElementById("detail-card");
-  overlay.className = `detail-card ${p.types[0]}`;
+  let card = document.getElementById("detail-card");
+  card.className = `detail-card ${p.types[0]}`;
   document.getElementById("detail-content").innerHTML = `
     <h2 class="CapLet">${p.name}</h2>
-    <img src="${p.image}">
-    <p>Typ: ${p.types.join(", ")}</p>
-    <p>HP: ${p.stats.hp}</p>
-    <p>Attack: ${p.stats.attack}</p>
-    <p>Defense: ${p.stats.defense}</p>
-    <p>Speed: ${p.stats.speed}</p>
-  `;
+    <img src="${p.image}"><br>
+    <b>Typ:</b> ${p.types.join(", ")}<br>
+    <b>Größe:</b> ${p.height / 10} m<br>
+    <b>Gewicht:</b> ${p.weight / 10} kg<br>
+    <div class="stats">
+      ${Object.entries(p.stats).map(([key, val]) => `
+        <div class="stat">
+          <span>${key.toUpperCase()}</span>
+          <div class="bar">
+            <div class="bar-fill" style="width:${Math.min(val,100)}%"></div>
+          </div>
+        </div>
+      `).join("")}
+    </div>`
 }
 

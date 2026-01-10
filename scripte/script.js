@@ -3,8 +3,13 @@ let currentIndex = 0;
 function filterPokemon() {
     let searchValue = document.getElementById("search").value.toLowerCase().trim();
     let container = document.getElementById("pokemon-container");
-    let html = "";
-    if (searchValue.length >= 3) {
+    let html = findePokemon(searchValue);
+    container.innerHTML = html;
+}
+
+function findePokemon(searchValue) {
+        let html = "";
+        if (searchValue.length >= 3) {
         for (let i = 0; i < pokemonArray.length; i++) {
             let pokemonName = pokemonArray[i].name.toLowerCase();
             if (pokemonName.includes(searchValue)) {
@@ -21,8 +26,9 @@ function filterPokemon() {
                     Pokémon nicht gefunden
                 </p>`;
     }
-    container.innerHTML = html;
+    return html;
 }
+
 
 function loadMore() {
     offset += limit;
